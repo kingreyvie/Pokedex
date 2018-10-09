@@ -1,6 +1,9 @@
 <template lang="pug">
   div
     section
+      .title Royal Rumble
+      router-link(to='/') < Go back to main menu
+      hr
       b-field(label='Add some royal name')
         b-taginput(@keyup.native.enter="getSortedList" v-model='tags', ellipsis='', icon='label', placeholder='Add a royale name')
       p.content(v-if="sortedTags.length > 0")

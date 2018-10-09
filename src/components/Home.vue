@@ -1,9 +1,10 @@
 <template lang="pug">
-  .hello
-    div
-      router-link(to='/search') Search Project
-    div
-      router-link(to='/royal/rumble') Royal Rumble
+  div
+    section
+      div
+        router-link(to='/search') Question 1 - Micro Project (Javascript only)
+      div
+        router-link(to='/royal/rumble') Question 2 - Royal Rumble
 
 </template>
 

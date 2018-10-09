@@ -1,14 +1,15 @@
 <template lang="pug">
   div
-    .title {{this.$route.params.username}}'s projects
-    router-link(:to='`/search`') < Go back to search
-    hr
-    div(v-if="repos.length > 0")
-      ul
-        li(v-for='repo in repos')
-          router-link(:to='`/repo/${$route.params.username}/${repo.name}`') {{ repo.name }}
-    div(v-else)
-      | Loading repos...
+    section
+      .title {{this.$route.params.username}}'s projects
+      router-link(:to='`/search`') < Go back to search
+      hr
+      div(v-if="repos.length > 0")
+        ul
+          li(v-for='repo in repos')
+            router-link(:to='`/repo/${$route.params.username}/${repo.name}`') {{ repo.name }}
+      div(v-else)
+        | Loading repos...
 
 </template>
 

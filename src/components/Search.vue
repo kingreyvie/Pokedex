@@ -1,6 +1,9 @@
 <template lang="pug">
   div
     section
+      .title Micro Project
+      router-link(to='/') < Go back to main menu
+      hr
       b-field(label='Search for github user repos')
         b-input(@keyup.native.enter="search" v-model='user', placeholder='e.g. kelvinsantos')
 

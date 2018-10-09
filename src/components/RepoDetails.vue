@@ -1,9 +1,10 @@
 <template lang="pug">
   div
-    .title {{this.$route.params.repo}}
-    router-link(:to='`/repos/${this.$route.params.username}`') < Go back to {{this.$route.params.username}}'s repos
-    hr
-    div(v-html='content')
+    section
+      .title {{this.$route.params.repo}}
+      router-link(:to='`/repos/${this.$route.params.username}`') < Go back to {{this.$route.params.username}}'s repos
+      hr
+      div(v-html='content')
 </template>
 
 <script>
