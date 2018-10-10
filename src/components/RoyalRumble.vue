@@ -21,9 +21,10 @@ export default {
   data () {
     return {
       tags: [
-        'Louis IX',
-        'Louis VIII',
-        'David II'
+        'George VI',
+        'William II',
+        'Elizabeth I',
+        'William I'
       ],
       sortedTags: []
     }

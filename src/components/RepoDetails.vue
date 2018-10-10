@@ -29,7 +29,7 @@ export default {
           this.content = response.data
         }
       }).catch(err => {
-        this.content = `Error 404: README.md not found. Click <router-link :to='/repos/${this.$route.params.username}'>here</router-link> to go back.`
+        this.content = `Error 404: README.md not found.`
       })
   }
 }

@@ -9,7 +9,10 @@
           li(v-for='repo in repos')
             router-link(:to='`/repo/${$route.params.username}/${repo.name}`') {{ repo.name }}
       div(v-else)
-        | Loading repos...
+        div(v-if="isUserExist")
+          | Loading repos...
+        div(v-else)
+          | Error 404: User repositories not found.
 
 </template>
 
@@ -20,7 +23,8 @@ export default {
   name: 'RepoList',
   data () {
     return {
-      repos: []
+      repos: [],
+      isUserExist: true
     }
   },
   mounted () {
@@ -30,6 +34,8 @@ export default {
         if (response.status === 200) {
           this.repos = response.data
         }
+      }).catch(err => {
+        this.isUserExist = false
       })
   }
 }
