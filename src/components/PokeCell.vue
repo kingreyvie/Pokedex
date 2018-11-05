@@ -29,7 +29,7 @@ export default {
     handleOnClick(pokeKey) {
       this.$store.dispatch('showLoader', true)
       axios
-        .get(`http://pokeapi.salestock.net/api/v2/pokemon/${pokeKey}`)
+        .get(`https://pokeapi.co/api/v2/pokemon/${pokeKey}/`)
         .then(response => {
           if (response.status === 200) {
             this.$store.dispatch('showLoader', false)
