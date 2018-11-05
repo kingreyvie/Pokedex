@@ -1,6 +1,6 @@
-# TAIGER Front-End Engrg Assessment
+# Pokedex using vue and vuex
 
-> A Vue.js project
+[Live Demo](http://sleek-pokedex.herokuapp.com)
 
 ## Build Setup
 
