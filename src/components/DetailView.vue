@@ -1,5 +1,6 @@
 <template lang="pug">
   section.detail-view
+    breeding-rhombus-spinner(v-if="$store.state.showLoader" :animation-duration="2000" :size="30" :color="'white'")
     img.sprite-image(:src="$store.state.pokemon.sprite" alt="sprite")
     div.data-wrapper
       h1.data-name ID: {{$store.state.pokemon.id}} {{$store.state.pokemon.name}}
@@ -8,9 +9,14 @@
 </template>
 
 <script>
+import { BreedingRhombusSpinner } from 'epic-spinners'
+
 export default {
   name: 'PokeCell',
   props: ['pokeKey', 'pokeClass', 'sprites'],
+  components: {
+    BreedingRhombusSpinner
+  },
   data () {
     return {
     }
@@ -18,9 +24,9 @@ export default {
   computed: {
     getPokeCellStyle: function () {
       return { 
-          'background-image': `url(${this.sprites})`,
-          'background-position': this.pokeClass.backgroundPosition
-        }
+        'background-image': `url(${this.sprites})`,
+        'background-position': this.pokeClass.backgroundPosition
+      }
     },
   }
 }

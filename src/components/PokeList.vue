@@ -27,7 +27,8 @@ export default {
       if (this.q) {
         let context = this
         this.pokeClasses = pokeClasses.filter(function(el) {
-          return el.name === context.q
+          return el.name.toLowerCase().indexOf(context.q.toLowerCase()) >= 0
+          // return el.name === context.q
         })
       } else {
         this.pokeClasses = pokeClasses

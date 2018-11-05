@@ -43,7 +43,7 @@ export default {
             this.$store.dispatch('showPokemon', pokeData)
           }
         }).catch(err => {
-          this.isUserExist = false
+          this.$store.dispatch('showLoader', false)
         })
     }
   }
