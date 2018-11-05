@@ -1,7 +1,8 @@
 <template lang="pug">
-  .main-container
-    detail-view
-    poke-list
+  .container
+    .main-container
+      detail-view
+      poke-list
 
 </template>
 
