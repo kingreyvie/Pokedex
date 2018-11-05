@@ -1,12 +1,27 @@
+@import "~bulma/sass/utilities/_all";
+
 .main-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 650px;
   height: 400px;
-  margin: 50px auto;
   background-color: #ff0015;
   border-radius: 10px;
+
+  @include from($tablet) {
+    width: 650px;
+    margin: auto;
+  }
+
+  @include tablet {
+    width: 650px;
+    margin: 50px auto;
+  }
+
+  @include widescreen-only {
+    width: 650px;
+    margin: 50px auto;
+  }
 }
 
 .poke-list {
