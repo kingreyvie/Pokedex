@@ -1,0 +1,56 @@
+<template lang="pug">
+  button.poke-cell(@click="handleOnClick(pokeKey)" v-bind:style='getPokeCellStyle')
+
+</template>
+
+<script>
+import axios from 'axios'
+
+export default {
+  name: 'PokeCell',
+  props: ['pokeKey', 'pokeClass', 'sprites'],
+  data () {
+    return {
+      id: '',
+      name: '',
+      sprite: '',
+      type: ''
+    }
+  },
+  computed: {
+    getPokeCellStyle: function () {
+      return { 
+          'background-image': `url(${this.sprites})`,
+          'background-position': this.pokeClass.backgroundPosition
+        }
+    },
+  },
+  methods: {
+    handleOnClick(pokeKey) {
+      this.$store.dispatch('showLoader', true)
+      axios
+        .get(`http://pokeapi.salestock.net/api/v2/pokemon/${pokeKey}`)
+        .then(response => {
+          if (response.status === 200) {
+            this.$store.dispatch('showLoader', false)
+            let data = response.data
+            let pokeData = {
+              id: data.id,
+              name: data.name,
+              sprite: data.sprites.front_default,
+              type: data.types[0].type.name
+            }
+            this.$store.dispatch('showPokemon', pokeData)
+          }
+        }).catch(err => {
+          this.isUserExist = false
+        })
+    }
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+
+</style>
