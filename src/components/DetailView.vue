@@ -1,11 +1,30 @@
 <template lang="pug">
   section.detail-view
     breeding-rhombus-spinner(v-if="$store.state.showLoader" :animation-duration="2000" :size="30" :color="'white'")
+    .columns.mobile-indcator
+      .column
+        .color-change
+      .column.indicator
+        .dot.red
+        .dot.yellow
+        .dot.green
     img.sprite-image(:src="$store.state.pokemon.sprite" alt="sprite")
-    div.data-wrapper
+    //- div.data-wrapper
+    //-   h1.data-name ID: {{$store.state.pokemon.id}} {{$store.state.pokemon.name}}
+    //-   p.data-char Type: {{$store.state.pokemon.type}}
+    .columns.controls
+      .column
+        .dot
+      .column
+        .light.red
+      .column
+        .light.blue
+      //- .column.absolute
+      //-   .horizontal
+      //-   .vertical
+    .green-screen
       h1.data-name ID: {{$store.state.pokemon.id}} {{$store.state.pokemon.name}}
       p.data-char Type: {{$store.state.pokemon.type}}
-
 </template>
 
 <script>
