@@ -1,5 +1,7 @@
 <template lang="pug">
-  button.poke-cell(@click="handleOnClick(pokeKey)" v-bind:style='getPokeCellStyle')
+  section
+    button.poke-cell(@click="handleOnClick(pokeKey)" v-bind:style='getPokeCellStyle')
+    .pokeName {{pokeName.charAt(0).toUpperCase() + pokeName.slice(1)}}
 
 </template>
 
@@ -8,7 +10,7 @@ import axios from 'axios'
 
 export default {
   name: 'PokeCell',
-  props: ['pokeKey', 'pokeClass', 'sprites'],
+  props: ['pokeKey', 'pokeName', 'pokeClass', 'sprites'],
   data () {
     return {
       id: '',

@@ -109,16 +109,18 @@ img.sprite-image {
 
 .searchPoke {
   position: absolute !important;
-  top: 12px;
+  top: 8px;
   // @include tablet {
   //   left: 90px;
   // }
 }
 
 .searchPoke input {
-  height: 25px;
+  height: 33px;
   border: 1px solid;
 }
+
+.searchPoke 
 
 .loader {
   position: absolute;
@@ -292,4 +294,10 @@ img.sprite-image {
     height: 10px !important;
     width: 5px !important;
   }
+}
+
+.pokeName {
+  font-size: 10px;
+  color: white;
+  text-align: center;
 }

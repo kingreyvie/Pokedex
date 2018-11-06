@@ -1,7 +1,7 @@
 <template lang="pug">
   section.poke-list
-    b-input.searchPoke(@keyup.native="searchPokemon" v-model='q', placeholder='')
-    poke-cell(v-for="pokeClass in pokeClasses" :key="pokeClass.id" :pokeKey="pokeClass.id" :pokeClass="pokeClass" :sprites="sprites")
+    b-input.searchPoke(@keyup.native="searchPokemon" v-model='q', placeholder="Search..." type="search" icon="magnify")
+    poke-cell(v-for="pokeClass in pokeClasses" :key="pokeClass.id" :pokeKey="pokeClass.id" :pokeName="pokeClass.name" :pokeClass="pokeClass" :sprites="sprites")
 </template>
 
 <script>
