@@ -108,7 +108,7 @@ img.sprite-image {
 }
 
 .searchPoke {
-  position: absolute;
+  position: absolute !important;
   top: 12px;
   // @include tablet {
   //   left: 90px;
