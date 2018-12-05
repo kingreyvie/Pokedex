@@ -16,7 +16,8 @@ export default {
       id: '',
       name: '',
       sprite: '',
-      type: ''
+      type: '',
+      moves: []
     }
   },
   computed: {
@@ -34,13 +35,17 @@ export default {
         .get(`https://pokeapi.co/api/v2/pokemon/${pokeKey}/`)
         .then(response => {
           if (response.status === 200) {
+             response.data.moves.foreach(a=>{
+               this.moves.push(a)
+             })
             this.$store.dispatch('showLoader', false)
             let data = response.data
             let pokeData = {
               id: data.id,
               name: data.name,
               sprite: data.sprites.front_default,
-              type: data.types[0].type.name
+              type: data.types[0].type.name,
+              moves: this.moves
             }
             this.$store.dispatch('showPokemon', pokeData)
           }

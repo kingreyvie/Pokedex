@@ -1,21 +1,29 @@
 @import "~bulma/sass/utilities/_all";
 
 body {
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Courier', sans-serif;
 }
 
 .main-container {
-  border: 5px solid;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 400px;
-  background: #ff1a00; /* Old browsers */
-  background: -moz-linear-gradient(top, #ff1a00 0%, #ff1a00 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #ff1a00 0%,#ff1a00 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #ff1a00 0%,#ff1a00 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff1a00', endColorstr='#ff1a00',GradientType=0 ); /* IE6-9 */
-  border-radius: 10px;
+  height: 500px;
+  background-image: linear-gradient(rgb(180, 72, 72),rgb(116, 41, 41));
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  // background: #ff1a00;
+  // /* Old browsers */
+  // background: -moz-linear-gradient(top, #ff1a00 0%, #ff1a00 100%);
+  // /* FF3.6-15 */
+  // background: -webkit-linear-gradient(top, #ff1a00 0%, #ff1a00 100%);
+  // /* Chrome10-25,Safari5.1-6 */
+  // background: linear-gradient(to bottom, #c0392b 0%, #e74c3c 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff1a00', endColorstr='#ff1a00', GradientType=0);
+  /* IE6-9 */
+  border-radius: 35px;
 
   @include from($tablet) {
     width: 650px;
@@ -41,9 +49,15 @@ body {
   width: 50%;
   height: 80%;
   padding: 10px;
-  margin-right: 10px;
-  background-color: #585858;
+  margin-right: -32px;
   overflow: scroll;
+  //background-color: #941414;
+  background-image: url("./bg3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top-left-radius: 55px;
+  border: 3px white solid;
+  font-weight: bolder;
 }
 
 .poke-cell {
@@ -59,28 +73,32 @@ body {
 .detail-view {
   width: 45%;
   height: 100%;
-  padding: 10px;
+  //padding: 10px;
   // background-color: #de0005;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-radius: 10px;
-  background: #cc0000; /* Old browsers */
-  background: -moz-linear-gradient(top, #cc0000 0%, #cc0000 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #cc0000 0%,#cc0000 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #cc0000 0%,#cc0000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc0000', endColorstr='#cc0000',GradientType=0 ); /* IE6-9 */
-  border-right: 10px solid;
+  background-image: url("./bg2.jpg");
+  background-size: cover;
+
+  // background: #c0392b; /* Old browsers */
+  // background: -moz-linear-gradient(top, #cc0000 0%, #cc0000 100%); /* FF3.6-15 */
+  // background: -webkit-linear-gradient(top, black 0%,#cc0000 100%); /* Chrome10-25,Safari5.1-6 */
+  // background: linear-gradient(to bottom, #fd887b 20%, #cf3030 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc0000', endColorstr='#cc0000',GradientType=0 ); /* IE6-9 */
+  border-right: 2px white solid;
 }
 
 .sprite-image {
   width: 80%;
   height: 150px;
   margin: 10px auto;
-  background-color: #585858;
-  border: 15px solid #DEDEDE;
+  background-image: linear-gradient(#1abc9c, #10705c);
+  border: 15px solid #751c12;
   border-bottom-left-radius: 25px;
-  color: #585858;
+  color: #ffffffd7;
   box-shadow: -2px 4px;
 }
 
@@ -120,9 +138,7 @@ img.sprite-image {
   border: 1px solid;
 }
 
-.searchPoke 
-
-.loader {
+.searchPoke .loader {
   position: absolute;
   left: 440px;
 }
@@ -139,8 +155,8 @@ img.sprite-image {
   margin-top: 10px;
   color: black;
   border-radius: 10px;
-  width: 45px;
-  border: 1px solid;
+  width: 5px;
+  border: 2px white solid;
 }
 
 .light.red {
@@ -152,13 +168,15 @@ img.sprite-image {
 }
 
 .green-screen {
-  width: 35%;
+  width: 90%;
   padding: 5px;
-  margin-left: 40px;
-  background-color: #9bbba0;
-  border: 1px solid;
-  color: black;
+  margin-left: 10px;
+  background-color: #b6e9fd;
+  border: 3px white solid;
+  color: rgb(43, 43, 43);
+  font-weight: bolder;
   border-radius: 5px;
+
   @include mobile {
     margin-left: 0px !important;
     width: 100%;
@@ -168,17 +186,19 @@ img.sprite-image {
 .dot {
   height: 25px;
   width: 25px;
+  border: 2px solid rgba(255, 255, 255, 0.836);
   background-color: #8a8a8a;
   border-radius: 50%;
   display: inline-block;
-  box-shadow: -2px 4px;
+  box-shadow: -1px 2px;
   margin-left: 10px;
 }
 
 .column.indicator {
-  margin-left: -200px;
+  margin-left: 50px;
+
   @include mobile {
-    margin-left: 0px !important;
+    margin-left: 50px !important;
     padding: 0;
     margin-top: auto;
     margin-bottom: auto;
@@ -192,55 +212,86 @@ img.sprite-image {
 }
 
 .column.indicator .dot {
-  height: 10px !important;
-  width: 10px !important;
+  height: 11px !important;
+  width: 11px !important;
+  margin-left: 8px;
 }
 
 .column.indicator .dot.red {
-  background-color: red
+  background-color: rgb(255, 87, 87)
 }
 
 .column.indicator .dot.yellow {
-  background-color: yellow
+  background-color: rgb(255, 255, 0)
 }
 
 .column.indicator .dot.green {
-  background-color: green
+  background-color: rgb(24, 168, 24)
 }
 
 @-webkit-keyframes color_change {
-  from { background-color: blue; }
-  to { background-color: red; }
+  from {
+    background-color: #8ed2ff;
+  }
+
+  to {
+    background-color: #c0392b;
+  }
 }
+
 @-moz-keyframes color_change {
-  from { background-color: blue; }
-  to { background-color: red; }
+  from {
+    background-color: blue;
+  }
+
+  to {
+    background-color: #c0392b;
+  }
 }
+
 @-ms-keyframes color_change {
-  from { background-color: blue; }
-  to { background-color: red; }
+  from {
+    background-color: #2980b9;
+  }
+
+  to {
+    background-color: #c0392b;
+  }
 }
+
 @-o-keyframes color_change {
-  from { background-color: blue; }
-  to { background-color: red; }
+  from {
+    background-color: #2980b9;
+  }
+
+  to {
+    background-color: #c0392b;
+  }
 }
+
 @keyframes color_change {
-  from { background-color: blue; }
-  to { background-color: red; }
+  from {
+    background-color: #2980b9;
+  }
+
+  to {
+    background-color: #c0392b;
+  }
 }
 
 .color-change {
   background-color: blue;
-  border: 1px solid white;
+  border: 3px solid rgba(255, 255, 255, 0.836);
   border-radius: 50px;
-  width: 25px;
-  height: 25px;
+  width: 55px;
+  height: 55px;
   -webkit-animation: color_change 1s infinite alternate;
-  -moz-animation: color_change 1s infinite alternate;  
-  -ms-animation: color_change 1s infinite alternate;  
-  -o-animation: color_change 1s infinite alternate;  
+  -moz-animation: color_change 1s infinite alternate;
+  -ms-animation: color_change 1s infinite alternate;
+  -o-animation: color_change 1s infinite alternate;
   animation: color_change 1s infinite alternate;
   box-shadow: -2px 4px;
+  margin-top: 3px;
   margin-left: 20px;
   margin-bottom: 10px;
 }
@@ -267,18 +318,22 @@ img.sprite-image {
 
 .column.absolute {
   position: absolute;
+
   @include from($tablet) {
     left: 250px !important;
     top: 300px !important;
   }
+
   @include tablet {
     left: 350px !important;
     top: 300px !important;
   }
+
   @include widescreen-only {
     left: 450px !important;
     top: 300px !important;
   }
+
   @include desktop {
     left: 550px;
     top: 300px;
